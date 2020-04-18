@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderColor: AppStyles.color.tertiary,
     borderRadius: 2,
-    borderWidth: 2,
+    borderBottomWidth: 1,
   },
   tabHeader: {
     fontSize: 18,
