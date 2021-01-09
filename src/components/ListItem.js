@@ -31,14 +31,14 @@ export default class ListItem extends Component {
     // Return list item component
     return (
       <View style={[styles.itemContainer, this.props.style]}>
-        <View style={styles.iconContainer}>
+        {/* <View style={styles.iconContainer}>
           <Icon
             name="dots-vertical"
             type="material-community"
             size={25}
             onPress={this._onMenuPress}
           />
-        </View>
+        </View> */}
         <View style={styles.dataContainer}>
           {content}
         </View>
