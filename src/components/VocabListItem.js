@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const VocabListItem = () => {
+const VocabListItem = (props) => {
   return (
     <View>
-      <Text>Here's a vocab, coming at ya!</Text>
+      <Text>{props.vocab.term}   |   {props.vocab.definition}</Text>
     </View>
   )
 }
