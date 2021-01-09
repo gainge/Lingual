@@ -4,7 +4,7 @@ import { View, Text } from 'react-native'
 const ToolListItem = (props) => {
   return (
     <View>
-      <Text>I'm a cool tool item!</Text>
+      <Text>{props.tool.title}</Text>
     </View>
   )
 }
