@@ -40,7 +40,7 @@ export default class ListScreen extends Component {
 
   render() {
     return (
-      <Page>
+      <Page style={{backgroundColor: AppStyles.color.activeTab}}>
         <ListContainer
           listData={this.state.list.items}
           renderItem={this._renderItem}

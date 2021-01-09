@@ -62,7 +62,14 @@ const ListStack = createStackNavigator(
         }
       })
     },
-    List: ListScreen,
+    List: {
+      screen: ListScreen,
+      navigationOptions: ({ navigation }) => ({
+        headerStyle: {
+          backgroundColor: navigation.getParam('backgroundColor') || AppStyles.color.alternateMid
+        }
+      })
+    }
   },
   {
     initialRouteName: 'ListOverview',

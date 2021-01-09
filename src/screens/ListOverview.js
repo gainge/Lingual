@@ -54,7 +54,7 @@ class ListOverViewScreen extends Component {
     // I guess we pass in the label or something?
     const currentList = this.state.datasets[this.state.activeTabIndex][itemIndex];
 
-    this.props.navigation.navigate('List', { list: currentList, modelType: this._getCurrentListType() });
+    this.props.navigation.navigate('List', { list: currentList, modelType: this._getCurrentListType(), backgroundColor: COLORS[this.state.activeTabIndex] });
   }
 
   _onAddItem = () => {
