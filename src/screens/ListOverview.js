@@ -59,6 +59,9 @@ class ListOverViewScreen extends Component {
 
   _onAddItem = () => {
     console.log('Heyo, you tryna add my guy?');
+    // So basically this is always going to correspond to adding a list
+    // adding individual items is handled by ListScreen
+    
   }
 
   _getCurrentListType = () => {
@@ -78,6 +81,10 @@ class ListOverViewScreen extends Component {
           onAddItem={this._onAddItem}
           listData={this.state.datasets[this.state.activeTabIndex]}
           renderItem={this._renderItem}
+        />
+        <GibFAB
+          style={[this.props.FABStyle]}
+          onPress={() => this._onAddItem()}
         />
       </Page>
     )

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Text, View, FlatList, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
 import ListItem from './ListItem'
-import GibFAB from './GibFAB'
 
 
 
@@ -44,10 +43,6 @@ export default class ListContainer extends Component {
           data={this.props.listData}
           renderItem={this._renderItem}
           keyExtractor={this._keyExtractor}
-        />
-        <GibFAB
-          style={[this.props.FABStyle]}
-          onPress={() => this._onAddItem()}
         />
       </View>
     )
