@@ -3,7 +3,7 @@
 const strings = {
   newListNamePrompt: 'List Name:',
   submitButtonText: 'Submit',
-  cancelButton: 'Cancel',
+  cancelButtonText: 'Cancel',
 }
 
 export default strings;
