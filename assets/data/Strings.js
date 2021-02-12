@@ -2,7 +2,7 @@
 
 const strings = {
   newListNamePrompt: 'List Name:',
-  submitNewListButton: 'Submit',
+  submitButtonText: 'Submit',
   cancelButton: 'Cancel',
 }
 
