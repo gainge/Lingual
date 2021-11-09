@@ -28,7 +28,7 @@ export default class NewListModal extends Component {
   }
 
   _onCancel = () => {
-    console.log('cancellin?');
+    this.setState({listName: ''});
     this.props.onCancel();
   }
 
