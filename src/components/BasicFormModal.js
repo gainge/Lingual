@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native';
-import { Text, View } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native'
 import { Button } from 'react-native-elements'
+import PropTypes from 'prop-types'
 
 import Strings from '../../assets/data/Strings'
 import AppStyles from '../styles/AppStyles';
@@ -23,21 +23,18 @@ const ModalButton = (props) => {
 }
 
 export default class BasicFormModal extends Component {
+  static propTypes = {
+    submitEnabled: PropTypes.bool.isRequired,
+  }
 
   constructor(props) {
     super(props);
-
-    const isVisible = props.isVisible
-
-    this.state = {
-      isVisible: isVisible
-    }
   }
 
   render() {
     return (
       <LingualModal
-        isVisible={this.state.isVisible}
+        isVisible={this.props.isVisible}
       >
         <View>
           {this.props.children}
@@ -47,14 +44,14 @@ export default class BasicFormModal extends Component {
               titleStyle={styles.cancelButtonTitleStyle}
               containerStyle={styles.cancelButtonContainer}
               buttonStyle={styles.cancelButton}
-              onPress={this._onSubmit}
+              onPress={this.props.onCancel}
             />
             <ModalButton
               title={Strings.submitButtonText}
               disabled={!this.props.submitEnabled}
               containerStyle={styles.submitButtonContainer}
               buttonStyle={styles.submitButton}
-              onPress={this._onSubmit}
+              onPress={this.props.onSubmit}
             />
           </View>
         </View>

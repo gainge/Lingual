@@ -17,6 +17,7 @@ import List from '../model/List'
 import TabBar from '../components/TabBar';
 import ListDataDisplay from '../components/ListDataDisplay';
 import AppStyles from '../styles/AppStyles';
+import NewListModal from '../components/NewListModal';
 
 const COLORS = [
   AppStyles.color.alternateMid,
@@ -38,6 +39,7 @@ class ListOverViewScreen extends Component {
       tabs: tabs,
       datasets: props.datasets,
       activeTabIndex: 0,
+      modalShown: false,
     }
   }
 
@@ -58,10 +60,16 @@ class ListOverViewScreen extends Component {
   }
 
   _onAddItem = () => {
-    console.log('Heyo, you tryna add my guy?');
+    console.log('adding that schmoney');
+    this.setState({ modalShown: true });
     // So basically this is always going to correspond to adding a list
     // adding individual items is handled by ListScreen
     
+  }
+
+  _hideModal = () => {
+    console.log('hide the modal shinji')
+    this.setState({ modalShown: false });
   }
 
   _getCurrentListType = () => {
@@ -86,6 +94,8 @@ class ListOverViewScreen extends Component {
           style={[this.props.FABStyle]}
           onPress={() => this._onAddItem()}
         />
+        <NewListModal isVisible={this.state.modalShown} onCancel={this._hideModal}>
+        </NewListModal>
       </Page>
     )
   }
