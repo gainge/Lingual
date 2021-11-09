@@ -24,7 +24,7 @@ export default class NewListModal extends Component {
     // RE-USE FOR ADD AND EDIT
     // all caps lock no chill
     console.log(`submitting ${this.state.listName}`);
-    // this.props.onSubmit();
+    this.props.onSubmit(this.state.listName);
   }
 
   _onCancel = () => {

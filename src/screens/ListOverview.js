@@ -67,8 +67,25 @@ class ListOverViewScreen extends Component {
     
   }
 
+  _addNewList = (listName) => {
+    if (!listName) {
+      return;
+    }
+
+    // Otherwise we have to make a model object and use the dispatch dude
+    // const date = new Date().getTime();
+    // const id = uuid();
+
+    // const newList = new List(id, listName, date);
+
+    // // TODO: investigate proptypes warning on adding list?
+
+    // // Actually update some state, how about
+    // this.props.addList(newList);
+    // this._hideModal();
+  }
+
   _hideModal = () => {
-    console.log('hide the modal shinji')
     this.setState({ modalShown: false });
   }
 
@@ -94,7 +111,7 @@ class ListOverViewScreen extends Component {
           style={[this.props.FABStyle]}
           onPress={() => this._onAddItem()}
         />
-        <NewListModal isVisible={this.state.modalShown} onCancel={this._hideModal}>
+        <NewListModal isVisible={this.state.modalShown} onCancel={this._hideModal} onSubmit={this._addNewList}>
         </NewListModal>
       </Page>
     )
